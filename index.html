@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>AQI app</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+        <div class="hero-img">
+            <div class="hero-img__content wrapper">
+                <h1 class="hero-img__heading">
+                    W obecnych czasach rozwój przemysłu, transpotu i wzrost liczby ludności powodują
+                    zanieczyszczenia powietrza, co ma negatywny wypływ na nasze zdrowie. Dzięki AQI app możesz sprawdzać
+                    jakość powietrza w Twoim otoczeniu.
+                </h1>
+                <a href="#aqi" class="hero-img__link">Sprawdż jakość powietrza</a>
+            </div>
+        </div>
+
+        <div class="search-area wrapper" id="aqi">
+            <div class="search-area__input-box">
+                <input type="text" class="search-area__input" placeholder=" podaj miasto lub użyj lokalizacji">
+                <button class="search-area__btn search-area__btn--search"><img src="images/search.svg" alt="search icon"
+                        class="search-area__icon"></button>
+                <button class="search-area__btn search-area__btn--geolocation"><img src="images/map_pin.svg" alt="gelocation icon"
+                        class="search-area__icon"></button>
+            </div>
+            <div class="search-area__aqi-box">
+                <p class="search-area__error-text"></p>
+                <p class="search-area__city"></p>
+                <span class="search-area__aqi-value"></span>
+                <a href="#info" class="search-area__aqi-link">Czym jest AQI ?</a>
+            </div>
+        </div>
+        <div class="data wrapper">
+            <div class="data__item">
+                <h3 class="data__heading">PM2,5: <span class="data__pm25"></span> µg/m³</h3>
+            </div>
+            <div class="data__item">
+                <h3 class="data__heading">PM10: <span class="data__pm10"></span> µg/m³</h3>
+            </div>
+            <div class="data__item">
+                <h3 class="data__heading">CO<sub>2</sub>: <span class="data__co2"></span> µg/m³
+                </h3>
+            </div>
+            <div class="data__item">
+                <h3 class="data__heading">NH<sub>3</sub>: <span class="data__nh3"></span> µg/m³
+                </h3>
+            </div>
+            <div class="data__item">
+                <h3 class="data__heading">NO: <span class="data__no"></span> µg/m³</h3>
+            </div>
+            <div class="data__item">
+                <h3 class="data__heading">NO<sub>2</sub>: <span class="data__no2"></span> µg/m³
+                </h3>
+            </div>
+            <div class="data__item">
+                <h3 class="data__heading">O<sub>3</sub>: <span class="data__o3"></span> µg/m³
+                </h3>
+            </div>
+            <div class="data__item">
+                <h3 class="data__heading">SO<sub>2</sub>: <span class="data__so2"></span> µg/m³
+                </h3>
+            </div>
+        </div>
+        <div class="info wrapper" id="info">
+            <div class="info__area">
+                <h3 class="info__heading">Indeks jakości powietrza AQI - co to takiego?</h3>
+                <p class="info__text">AQI (ang. Air Quality Index) to najprostszy sposób określenia poziomu
+                    zanieczyszczenia powietrza, który mieści się w skali od 0 do 500. Im wyższy wskaźnik, tym powietrze
+                    bardziej zanieczyszczone. Ocena jakości powietrza obejmuje przede wszystkim poziom pyłów
+                    zawieszonych PM2.5 i PM10, ale także niektórych zanieczyszczeń gazowych - dwutlenku siarki (SO<sub>2</sub>),
+                    ozonu(O<sub>3</sub>), tlenku azotu (NO), tlenku węgla (CO) i benzenu, które najczęściej są wynikiem
+                    spalania paliw. Pomiary dokonywane są w sposób ciągły (automatycznie lub manualnie) lub okresowy. Do oceny
+                    jakości powietrza wykorzystywane są zaawansowane metody matematyczne. Zebrane dane na temat stężeń
+                    poszczególnych zanieczyszczeń porównywane są z tzw. poziomami odniesienia, które tworzą standardy.
+                </p>
+            </div>
+            <div class="info__area">
+                <h3 class="info__heading">Jak wylicza się AQI?</h3>
+                <p class="info__text">Indeks jakości powietrza jest różnie wyliczany w zależności od rejonu.
+                    Najpowszechniejsze normy to amerykańska i chińska. Są do siebie dość podobne, jeśli mówimy o
+                    wartościach skrajnie wysokich - powyżej 200. Ze względu na gorszą jakość powietrza w tamtej części Azji, chińska
+                    norma jest mniej restrykcyjna i uznaje, że “stan dobry” występuje do momentu przekroczenia poziomu 35µg/m3 pyłów PM2.5.
+                    Bardzo często uznaje się ją za odpowiednią dla Polski, jednak rekomenduje się
+                    korzystanie z norm amerykańskich lub europejskich, które są najbliższe standardom wyznaczonych przez
+                    Światową Organizację Zdrowia (WHO).</p>
+            </div>
+            <div class="info__area">
+                <h3 class="info__heading">Normy jakości powietrza:</h3>
+                <table class="info__table">
+                    <thead class="info__table-header">
+                        <tr class="info__table-row">
+                            <th class="info__table-heading" scope="col">Nazwa</th>
+                            <th class="info__table-heading" scope="col">Indeks</th>
+                            <th class="info__table-heading" scope="col">PM2.5</th>
+                            <th class="info__table-heading" scope="col">PM10</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="info__table-row">
+                            <td class="info__table-data" data-label="Name">Dobry</td>
+                            <td class="info__table-data" data-label="Number">1</td>
+                            <td class="info__table-data" data-label="PM2.5">0-15</td>
+                            <td class="info__table-data" data-label="PM10">0-25</td>
+                        </tr>
+                        <tr class="info__table-row">
+                            <td class="info__table-data" scope="row" data-label="Name">Umiarkowany</td>
+                            <td class="info__table-data" data-label="Number">2</td>
+                            <td class="info__table-data" data-label="PM2.5">15-30</td>
+                            <td class="info__table-data" data-label="PM10">25-50</td>
+                        </tr>
+                        <tr class="info__table-row">
+                            <td class="info__table-data" scope="row" data-label="Name">Dostateczny</td>
+                            <td class="info__table-data" data-label="Number">3</td>
+                            <td class="info__table-data" data-label="PM2.5">30-55</td>
+                            <td class="info__table-data" data-label="PM10">50-90</td>
+                        </tr>
+                        <tr class="info__table-row">
+                            <td class="info__table-data" scope="row" data-label="Name">Zły</td>
+                            <td class="info__table-data" data-label="Number">4</td>
+                            <td class="info__table-data" data-label="PM2.5">55-110</td>
+                            <td class="info__table-data" data-label="PM10">90-180</td>
+                        </tr>
+                        <tr class="info__table-row">
+                            <td class="info__table-data" scope="row" data-label="Name">Bardzo zły</td>
+                            <td class="info__table-data" data-label="Number">5</td>
+                            <td class="info__table-data" data-label="PM2.5">>110</td>
+                            <td class="info__table-data" data-label="PM10">>180</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
